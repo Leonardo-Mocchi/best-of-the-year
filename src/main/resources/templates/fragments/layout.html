@@ -16,23 +16,23 @@
 <body>
 
     <header th:fragment="header(currentPage)">
-        <div class="d-flex flex-row row-cols-2 ">
-            <div class="py-3 col-2 border-bottom border-end border-1 border-light d-flex">
+        <div class="d-flex flex-row row-cols-2 bg-dark bg-gradient">
+            <div class="py-3 col-2 d-flex">
                 <h1 class="m-0 p-0 ps-5 align-self-center">Best of</h1>
             </div>
 
-            <div class="py-3 col-8 border-1 border-bottom border-light d-flex">
+            <div class="py-3 col-8 d-flex">
                 <a th:class="${currentPage == 'movies' ? 'btn btn-primary' : 'btn btn-outline-primary'} + ' m-3 px-5 py-2 d-flex'" th:href="@{/movies}">
-                    <h3 class="m-0 p-0 align-self-center">Movies</h3>
+                    <h3 class="m-0 p-0 align-self-center fw-bold">Movies</h3>
                 </a>
 
                 <a th:class="${currentPage == 'songs' ? 'btn btn-success' : 'btn btn-outline-success'} + ' m-3 px-5 py-2 d-flex'" th:href="@{/songs}">
-                    <h3 class="m-0 p-0 align-self-center">Songs</h3>
+                    <h3 class="m-0 p-0 align-self-center fw-bold">Songs</h3>
                 </a>
 
             </div>
 
-            <div class="col-2 border-1 border-bottom border-light d-flex">
+            <div class="col-2 d-flex">
                 <a th:class="${currentPage == 'home' ? 'd-none' : 'm-4 px-4 py-1 d-flex btn btn-light d-flex'}" th:href="@{/}">
                     <i class="fa-solid fa-house-user text-dark fs-2 m-0 p-0 pe-2 align-self-center"></i>
                     <h4 class="m-0 p-0 align-self-center">Home Page</h4>
@@ -40,8 +40,15 @@
             </div>
         </div>
     </header>
+    <!-- (mediaType) -->
+    <div th:fragment="chart(mediaType)" class="container text-center">
 
+        <div class="d-flex row-cols-2" th:each="media : ${mediaType}" style="margin: 0 30% 0 25%; font-size: 36px;">
+            <div class=" text-dark bg-secondary-subtle col-2 py-3 border border-3 border-dark" th:text="${media.getId()}"></div>
+            <div th:class="${currentPage == 'movies' ? 'bg-primary' : 'bg-success'} + ' col-10 py-3 pe-3 border border-3 border-dark'" th:text="${media.getTitle()}"></div>
+        </div>
 
+    </div>
 
     <!-- > BOOTSTRAP JS via WebJars -->
     <script th:fragment="popper" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>

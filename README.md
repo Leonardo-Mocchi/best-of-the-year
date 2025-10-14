@@ -2,6 +2,17 @@
 
 > ***Repo:*** best-of-the-year
 
+## ⚠️ DISCLAIMER
+
+**This is a student project for educational purposes only.**
+
+- Images used are sourced from Shutterstock for learning purposes
+- This project is not intended for commercial use
+- All intellectual property rights belong to their respective owners
+- The design is intentionally basic as this is a learning exercise
+
+---
+
 Questo esercizio è diviso in vari step, che vanno seguiti in maniera incrementale, essendo propedeutici.
 
 ## Step 1
@@ -12,12 +23,12 @@ Questo esercizio è diviso in vari step, che vanno seguiti in maniera incrementa
 
 ## Step 2
 
-[ ] Creare all’interno del controller due metodi privati :
+[x] Creare all’interno del controller due metodi privati :
 
 - uno restituisce una lista di oggetti di tipo Movie - getBestMovies()
 - l’altro restituisce una lista di oggetti di tipo Song - getBestSongs()
 
-[ ] Creare le classi Movie e Song aventi almeno :
+[x] Creare le classi Movie e Song aventi almeno :
 
 - un id
 - un titolo
@@ -29,7 +40,7 @@ Questo esercizio è diviso in vari step, che vanno seguiti in maniera incrementa
 
 [ ] In ognuno di questi metodi aggiungere al Model un attributo stringa con una lista di titoli di migliori film o canzoni (in base al metodo che stiamo implementando) separati da virgole. Utilizzare i due metodi getBest… per recuperare i film e le canzoni.
 
-[ ] Creare i rispettivi template Thymeleaf.
+[x] Creare i rispettivi template Thymeleaf.
 
 ## Step 3
 
@@ -51,9 +62,9 @@ Questo esercizio è diviso in vari step, che vanno seguiti in maniera incrementa
 - “/movies”
 - “/songs”
 
-[ ] In modo che entrambi i Model restituiscano una lista di oggetti (Movie o Song) invece di una stringa.
+[x] In modo che entrambi i Model restituiscano una lista di oggetti (Movie o Song) invece di una stringa.
 
-[ ] Modificare anche le rispettive view.
+[x] Modificare anche le rispettive view.
 
 ## Step 5 : Bonus
 

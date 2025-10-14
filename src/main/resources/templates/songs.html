@@ -5,6 +5,9 @@
 
     <th:block th:replace="~{fragments/layout :: header('songs')}" />
 
+    <h1 class="text-center mt-5 mb-4">Best songs</h1>
+
+    <th:block th:replace="~{fragments/layout :: chart(${mediaType})}" />
 
     <th:block th:replace="~{fragments/layout :: popper}" />
 </body>
