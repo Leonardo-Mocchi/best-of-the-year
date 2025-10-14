@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{fragments/layout :: head('Home Page')}" />
+
+<body class="bg-dark text-light">
+
+    <th:block th:replace="~{fragments/layout :: header('home')}" />
+
+    <div class="container text-center mt-5">
+        <h1 th:text="|Best Of The Year By ${username}|" />
+    </div>
+
+    <th:block th:replace="~{fragments/layout :: popper}" />
+</body>
+
+</html>
