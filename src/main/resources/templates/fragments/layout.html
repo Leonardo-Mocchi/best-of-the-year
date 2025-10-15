@@ -40,14 +40,15 @@
             </div>
         </div>
     </header>
-    <!-- (mediaType) -->
+
+
     <div th:fragment="chart(mediaType)" class="container text-center">
-
-        <div class="d-flex row-cols-2" th:each="media : ${mediaType}" th:style="${currentPage == 'movies' ? 'margin: 0 30% 0 22%;' : 'margin: 0 20% 0 8%;'} + ' font-size: 36px;'">
-            <div class=" border-bottom border-3 border-light col-2 py-3" th:text="${media.getId()}"></div>
-            <div th:class="${currentPage == 'movies' ? 'bg-primary' : 'bg-success'} + ' col-10 py-3 pe-1 border border-3 border-dark'" th:text="${currentPage == 'movies' ? media.getTitle() : media.getTitle() + ' - ' + media.getArtist()}"></div>
-        </div>
-
+        <a class="text-decoration-none text-reset" th:each="media : ${mediaType}" th:href="@{${currentPage=='movies' ? '/movies/' + media.getId() : '/songs/' + media.getId()}}">
+            <div class="d-flex row-cols-2" th:style="${currentPage == 'movies' ? 'margin: 0 30% 0 22%;' : 'margin: 0 20% 0 8%;'} + ' font-size: 36px;'">
+                <div class=" border-bottom border-3 border-light col-2 py-3" th:text="${media.getId()}"></div>
+                <div th:class="${currentPage == 'movies' ? 'bg-primary' : 'bg-success'} + ' col-10 py-3 pe-1 border border-3 border-dark'" th:text="${currentPage == 'movies' ? media.getTitle() : media.getTitle() + ' - ' + media.getArtist()}"></div>
+            </div>
+        </a>
     </div>
 
     <!-- > BOOTSTRAP JS via WebJars -->

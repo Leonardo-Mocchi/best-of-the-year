@@ -40,18 +40,18 @@ Questo esercizio è diviso in vari step, che vanno seguiti in maniera incrementa
 
 [ ] In ognuno di questi metodi aggiungere al Model un attributo stringa con una lista di titoli di migliori film o canzoni (in base al metodo che stiamo implementando) separati da virgole. Utilizzare i due metodi getBest… per recuperare i film e le canzoni.
 
-[x] Creare i rispettivi template Thymeleaf.
+[ ] Creare i rispettivi template Thymeleaf.
 
 ## Step 3
 
-[ ] Creare due metodi
+[x] Creare due metodi
 
 - “/movies/{id}”
 - “/songs/{id}”
 
-[ ] che dato il parametro id passato tramite il path, mostri in pagina il titolo relativo al film / canzone.
+[x] che dato il parametro id passato tramite il path, mostri in pagina il titolo relativo al film / canzone.
 
-[ ] Testare chiamando dal browser i diversi url.
+[x] Testare chiamando dal browser i diversi url.
 
 ## Step 4
 

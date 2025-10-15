@@ -9,6 +9,7 @@ import org.lessons.java.best_of_the_year.models.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class HomeController {
@@ -41,6 +42,24 @@ public class HomeController {
         model.addAttribute("mediaType", songsList);
 
         return "songs";
+    }
+
+    @GetMapping("/movies/{id}")
+    public String movieByID(Model model, @PathVariable int id) {
+
+        Movie movie = findMovieByID(id);
+        model.addAttribute("movie", movie);
+        model.addAttribute("currentPage", "movieByID");
+        return "movieByID";
+    }
+
+    @GetMapping("/songs/{id}")
+    public String songByID(Model model, @PathVariable int id) {
+
+        Song song = findSongByID(id);
+        model.addAttribute("song", song);
+        model.addAttribute("currentPage", "songByID");
+        return "songByID";
     }
 
     //, PRIVATE METHODS
@@ -84,4 +103,21 @@ public class HomeController {
         return songs;
     }
 
+    private Movie findMovieByID(int id) {
+        for (Movie movie : getBestMovies()) {
+            if (movie.getId() == id) {
+                return movie;
+            }
+        }
+        return null;
+    }
+
+    private Song findSongByID(int id) {
+        for (Song song : getBestSongs()) {
+            if (song.getId() == id) {
+                return song;
+            }
+        }
+        return null;
+    }
 }

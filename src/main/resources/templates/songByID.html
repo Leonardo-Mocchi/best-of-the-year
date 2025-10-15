@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<th:block th:replace="~{fragments/layout :: head(song.getTitle)}" />
+
+<body class="bg-dark text-light">
+
+    <th:block th:replace="~{fragments/layout :: header('songByID')}" />
+
+    <!-- Show song details IF song exists -->
+    <div th:if="${song}" class="container py-4">
+        <div class="bg-success bg-gradient d-flex flex-row row-cols-2 rounded-3" style="margin: 5% 20%; min-height: 500px;">
+            <div class="col-6 p-4">
+                <h1 class="m-0 ps-1 pt-5" th:text="|${song.getTitle}|" />
+                <h2 class="m-0 ps-1 pt-1" th:text="|- by '${song.getArtist}'|" />
+
+                <h3 class="m-0 ps-1 pt-5 pb-2">Infos</h3>
+                <p class="m-0 px-1" th:text="|Durata: ${song.getSongLength}|" />
+                <p class="m-0 px-1" th:text="|Anno di Rilascio: ${song.getReleaseYear}|" />
+
+            </div>
+            <div class="col-6">
+                <img src="https://www.dummyimg.in/placeholder?width=420&height=624&text=Song%20Poster%20Here&font_size=28" alt="Blank Movie Poster" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Show error message IF song is null -->
+    <div th:unless="${song}" class="container py-4">
+        <div class="bg-danger bg-gradient text-center rounded-3 mx-auto p-5" style="max-width: 600px;">
+            <i class="fa-solid fa-music-slash fa-4x mb-3"></i>
+            <h2>Song Not Found!</h2>
+            <p class="fs-5">Sorry, we couldn't find a song with that ID.</p>
+            <a th:href="@{/songs}" class="btn btn-light btn-lg mt-3">
+                <i class="fa-solid fa-arrow-left me-2"></i>Back to Songs
+            </a>
+        </div>
+    </div>
+
+    <th:block th:replace="~{fragments/layout :: popper}" />
+</body>
+
+</html>
